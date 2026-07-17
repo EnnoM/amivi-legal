@@ -22,7 +22,7 @@
 <nav><a href="index.html">← Übersicht</a></nav>
 
 <h1>Datenschutzerklärung</h1>
-<p class="meta">Stand: 08. Juli 2026</p>
+<p class="meta">Stand: 17. Juli 2026</p>
 <p>Diese Datenschutzerklärung erläutert, welche personenbezogenen Daten ich im Rahmen der App „AMVIVI" verarbeite, zu welchen Zwecken und auf welcher Rechtsgrundlage.</p>
 
 <h2>Verantwortlicher</h2>
@@ -37,12 +37,14 @@
   <li>Bilddaten (Profilbilder, freiwillig).</li>
   <li>Meta- und Verfahrensdaten (Zeitstempel, Geräte-Token).</li>
   <li>Freiwillige Angaben (Kurzbiografie, Postleitzahl, Geburtsdatum, Geschlecht).</li>
+  <li>Kontaktdaten (freiwillig hinterlegte Telefonnummer; beim Kontaktabgleich Telefonnummern aus dem Geräteadressbuch – ausschließlich lokal verarbeitet und nur als Hashwert abgeglichen).</li>
 </ul>
 <p><strong>Verarbeitungszwecke</strong></p>
 <ul>
   <li>Betrieb und Bereitstellung der App.</li>
   <li>Registrierung, Authentifizierung und Kontoverwaltung.</li>
   <li>Verwaltung von Aktivitäten, Gruppen und Freundschaften.</li>
+  <li>Auffinden bereits registrierter Freunde über den optionalen Telefonnummer-Abgleich.</li>
   <li>Chat-Kommunikation zwischen Nutzern.</li>
   <li>Versand von Push-Benachrichtigungen.</li>
   <li>Kartenanzeige und Ortssuche.</li>
@@ -52,7 +54,7 @@
 <h2>Rechtsgrundlagen (Art. 6 DSGVO)</h2>
 <ul>
   <li>Vertragserfüllung (lit. b) – für alle Kernfunktionen der App.</li>
-  <li>Einwilligung (lit. a) – für freiwillige Angaben, Profilbilder, GPS-Standort und Push-Benachrichtigungen; in der Regel über die Systemberechtigungsabfrage, widerrufbar in den Geräteeinstellungen.</li>
+  <li>Einwilligung (lit. a) – für freiwillige Angaben, Profilbilder, GPS-Standort, Push-Benachrichtigungen sowie die Telefonnummer und den Kontaktabgleich; in der Regel über die Eingabe der jeweiligen Angabe bzw. die Systemberechtigungsabfrage, widerrufbar in den Geräteeinstellungen.</li>
   <li>Berechtigte Interessen (lit. f) – für Sicherheitsmaßnahmen, Kartendienste und Feedback.</li>
 </ul>
 <p>Ergänzend gelten die Regelungen des BDSG.</p>
@@ -106,6 +108,13 @@
 <h2>Gruppen und Freundschaften</h2>
 <p>Für Freundschaftsanfragen und Gruppeneinladungen werden Benutzer-IDs, Anfragestatus und Zeitstempel gespeichert.</p>
 <p>Rechtsgrundlage: Vertragserfüllung (lit. b).</p>
+
+<h2>Telefonnummer und Kontaktabgleich</h2>
+<p>Die App bietet die Möglichkeit, bereits registrierte Freunde über die Telefonnummer zu finden. Diese Funktion ist freiwillig und kann jederzeit übersprungen werden.</p>
+<p><strong>Eigene Telefonnummer.</strong> Sie können bei der Registrierung oder später freiwillig eine Telefonnummer hinterlegen, damit andere Nutzer Sie über den Kontaktabgleich finden können. Ihre Telefonnummer wird dazu in ein einheitliches Format (E.164) gebracht und mit einem kryptografischen Einweg-Hashverfahren (SHA-256) in einen Hashwert umgerechnet. Es wird ausschließlich dieser Hashwert in einem nicht öffentlich lesbaren Verzeichnis gespeichert; die Klartext-Nummer wird nur für Sie selbst zugänglich abgelegt, damit Sie sie einsehen und wieder entfernen können. Die Nummer kann jederzeit in der App wieder gelöscht werden.</p>
+<p><strong>Abgleich Ihrer Kontakte.</strong> Wenn Sie dem Zugriff auf Ihr Adressbuch ausdrücklich zustimmen, werden die Telefonnummern Ihrer Kontakte ausschließlich lokal auf Ihrem Gerät in das E.164-Format gebracht und ebenfalls als SHA-256-Hashwerte umgerechnet. Nur diese Hashwerte – nicht die Klartext-Nummern, Namen oder sonstigen Kontaktdaten – werden an unseren Server (Firebase Cloud Functions) übermittelt und dort mit den Hashwerten registrierter Nutzer verglichen. Kontakte, die keinem registrierten Nutzer zugeordnet werden können, werden nicht gespeichert; auch die zum Abgleich übermittelten Hashwerte werden nicht dauerhaft gespeichert. Ihr Adressbuch wird zu keinem Zeitpunkt vollständig hochgeladen oder gespeichert.</p>
+<p>Die Berechtigung zum Zugriff auf Ihre Kontakte können Sie jederzeit in den Geräteeinstellungen widerrufen.</p>
+<p>Rechtsgrundlage: Einwilligung (lit. a) – erteilt über die Eingabe der Telefonnummer bzw. die Systemberechtigungsabfrage für den Kontaktzugriff.</p>
 
 <h2>Chat-Nachrichten</h2>
 <p>Chat-Nachrichten werden in Firebase Firestore gespeichert und sind ausschließlich den Konversationsteilnehmern zugänglich. Pro Chat werden maximal 50 Nachrichten gespeichert; ältere werden automatisch gelöscht.</p>
